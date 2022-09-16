@@ -28,14 +28,14 @@ function LoginFormComponent(props: Props): JSX.Element {
                 rules={[
                     {
                         required: true,
-                        message: 'Please specify a username',
+                        message: '请指定用户名',
                     },
                 ]}
             >
                 <Input
                     autoComplete='username'
                     prefix={<UserOutlined style={{ color: 'rgba(0, 0, 0, 0.25)' }} />}
-                    placeholder='Username'
+                    placeholder='用户名'
                 />
             </Form.Item>
 
@@ -45,14 +45,14 @@ function LoginFormComponent(props: Props): JSX.Element {
                 rules={[
                     {
                         required: true,
-                        message: 'Please specify a password',
+                        message: '请指定密码',
                     },
                 ]}
             >
                 <Input
                     autoComplete='current-password'
                     prefix={<LockOutlined style={{ color: 'rgba(0, 0, 0, 0.25)' }} />}
-                    placeholder='Password'
+                    placeholder='密码'
                     type='password'
                 />
             </Form.Item>
@@ -65,7 +65,7 @@ function LoginFormComponent(props: Props): JSX.Element {
                     htmlType='submit'
                     className='login-form-button'
                 >
-                    Sign in
+                    登录
                 </Button>
             </Form.Item>
         </Form>

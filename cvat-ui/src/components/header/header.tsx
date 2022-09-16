@@ -172,45 +172,46 @@ function HeaderContainer(props: Props): JSX.Element {
 
     const showAboutModal = useCallback((): void => {
         Modal.info({
-            title: `${tool.name}`,
+            // title: `${tool.name}`,
+            title:'版本介绍',
             content: (
                 <div>
-                    <p>{`${tool.description}`}</p>
+                    {/* <p>{`${tool.description}`}</p> */}
                     <p>
-                        <Text strong>Server version:</Text>
+                        <Text strong>服务器版本:</Text>
                         <Text type='secondary'>{` ${tool.server.version}`}</Text>
                     </p>
                     <p>
-                        <Text strong>Core version:</Text>
+                        <Text strong>核心版本:</Text>
                         <Text type='secondary'>{` ${tool.core.version}`}</Text>
                     </p>
                     <p>
-                        <Text strong>Canvas version:</Text>
+                        <Text strong>画布版本:</Text>
                         <Text type='secondary'>{` ${tool.canvas.version}`}</Text>
                     </p>
                     <p>
-                        <Text strong>UI version:</Text>
+                        <Text strong>用户界面版本:</Text>
                         <Text type='secondary'>{` ${tool.ui.version}`}</Text>
                     </p>
                     <Row justify='space-around'>
                         <Col>
                             <a href={CHANGELOG_URL} target='_blank' rel='noopener noreferrer'>
-                                What&apos;s new?
+                                {/* What&apos;s new? */}
                             </a>
                         </Col>
                         <Col>
                             <a href={LICENSE_URL} target='_blank' rel='noopener noreferrer'>
-                                MIT License
+                                {/* MIT License */}
                             </a>
                         </Col>
                         <Col>
                             <a href={GITTER_URL} target='_blank' rel='noopener noreferrer'>
-                                Need help?
+                                {/* Need help? */}
                             </a>
                         </Col>
                         <Col>
                             <a href={DISCORD_URL} target='_blank' rel='noopener noreferrer'>
-                                Find us on Discord
+                                {/* Find us on Discord */}
                             </a>
                         </Col>
                     </Row>
@@ -258,13 +259,13 @@ function HeaderContainer(props: Props): JSX.Element {
                         window.open(`${tool.server.host}/admin`, '_blank');
                     }}
                 >
-                    Admin page
+                    管理页面
                 </Menu.Item>
             )}
             <Menu.SubMenu
                 disabled={organizationsFetching}
                 key='organization'
-                title='Organization'
+                title='组织'
                 icon={organizationsFetching ? <LoadingOutlined /> : <TeamOutlined />}
             >
                 {currentOrganization ? (
@@ -310,7 +311,7 @@ function HeaderContainer(props: Props): JSX.Element {
                             });
                         }}
                     >
-                        Switch organization
+                        选择组织
                     </Menu.Item>
                 ) : (
                     <>
@@ -322,7 +323,7 @@ function HeaderContainer(props: Props): JSX.Element {
                                 key='$personal'
                                 onClick={resetOrganization}
                             >
-                                Personal workspace
+                                个人工作区
                             </Menu.Item>
                             {organizationsList.map((organization: any): JSX.Element => (
                                 <Menu.Item
@@ -344,10 +345,10 @@ function HeaderContainer(props: Props): JSX.Element {
                 title={`Press ${switchSettingsShortcut} to switch`}
                 onClick={() => switchSettingsDialog(true)}
             >
-                Settings
+                设置
             </Menu.Item>
             <Menu.Item icon={<InfoCircleOutlined />} key='about' onClick={() => showAboutModal()}>
-                About
+                关于
             </Menu.Item>
             {renderChangePasswordItem && (
                 <Menu.Item
@@ -357,7 +358,7 @@ function HeaderContainer(props: Props): JSX.Element {
                     onClick={(): void => switchChangePasswordDialog(true)}
                     disabled={changePasswordFetching}
                 >
-                    Change password
+                    更改密码
                 </Menu.Item>
             )}
 
@@ -367,7 +368,7 @@ function HeaderContainer(props: Props): JSX.Element {
                 onClick={onLogout}
                 disabled={logoutFetching}
             >
-                Logout
+                退出
             </Menu.Item>
         </Menu>
     );
@@ -392,7 +393,7 @@ function HeaderContainer(props: Props): JSX.Element {
                         history.push('/projects');
                     }}
                 >
-                    Projects
+                    项目
                 </Button>
                 <Button
                     className={getButtonClassName('tasks')}
@@ -404,7 +405,7 @@ function HeaderContainer(props: Props): JSX.Element {
                         history.push('/tasks');
                     }}
                 >
-                    Tasks
+                    任务
                 </Button>
                 <Button
                     className={getButtonClassName('jobs')}
@@ -416,7 +417,7 @@ function HeaderContainer(props: Props): JSX.Element {
                         history.push('/jobs');
                     }}
                 >
-                    Jobs
+                    工作
                 </Button>
                 <Button
                     className={getButtonClassName('cloudstorages')}
@@ -428,7 +429,7 @@ function HeaderContainer(props: Props): JSX.Element {
                         history.push('/cloudstorages');
                     }}
                 >
-                    Cloud Storages
+                    云存储
                 </Button>
                 {isModelsPluginActive ? (
                     <Button

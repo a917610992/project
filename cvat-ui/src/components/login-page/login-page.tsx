@@ -46,8 +46,8 @@ function LoginPageComponent(props: LoginPageComponentProps & RouteComponentProps
                         <Row justify='start' align='top'>
                             <Col>
                                 <Text strong>
-                                    New to CVAT? Create
-                                    <Link to='/auth/register'> an account</Link>
+                                    您是新用户吗? 请创建
+                                    <Link to='/auth/register'>新账户</Link>
                                 </Text>
                             </Col>
                         </Row>
@@ -55,7 +55,7 @@ function LoginPageComponent(props: LoginPageComponentProps & RouteComponentProps
                             <Row justify='start' align='top'>
                                 <Col>
                                     <Text strong>
-                                        <Link to='/auth/password/reset'>Forgot your password?</Link>
+                                        <Link to='/auth/password/reset'>忘记密码?</Link>
                                     </Text>
                                 </Col>
                             </Row>

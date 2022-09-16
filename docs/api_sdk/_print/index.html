@@ -1,0 +1,1877 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.83.1" /><link rel="canonical" type="text/html" href="../../../docs/api_sdk/">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>API &amp; SDK | CVAT</title>
+<meta name="description" content=""><meta property="og:title" content="API &amp; SDK" />
+<meta property="og:description" content="How to interact with CVAT" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/docs/api_sdk/" /><meta property="og:site_name" content="CVAT" />
+
+<meta itemprop="name" content="API &amp; SDK">
+<meta itemprop="description" content="How to interact with CVAT"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="API &amp; SDK"/>
+<meta name="twitter:description" content="How to interact with CVAT"/>
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.591a88c412fca6c692021fe322184768cfc320012e0a443e8514b68fd373aa21.css" as="style">
+<link href="../../../scss/main.min.591a88c412fca6c692021fe322184768cfc320012e0a443e8514b68fd373aa21.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+<link rel="stylesheet" href="../../../css/prism.css"/>
+
+
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+
+
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../about/">
+    <span class="navbar-logo"><svg width="98" height="27" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M101 0v29l-52.544.001C44.326 35.511 35.598 40 25.5 40 11.417 40 0 31.27.0 20.5S11.417 1 25.5 1c4.542.0 8.807.908 12.5 2.5V0h63z" id="logoA"/></defs><g transform="translate(-2 -1)" fill="none" fill-rule="evenodd"><mask id="logoB" fill="#fff"><use xlink:href="#logoA"/></mask><path d="M48.142 1c4.736.0 6.879 3.234 6.879 5.904v2.068h-4.737V6.904c0-.79-.789-2.144-2.142-2.144-1.654.0-2.368 1.354-2.368 2.144v15.192c0 .79.714 2.144 2.368 2.144 1.353.0 2.142-1.354 2.142-2.144v-2.068h4.737v2.068c0 2.67-2.143 5.904-6.88 5.904C42.956 28 41 24.766 41 22.134V6.904C41 4.234 42.955 1 48.142 1zM19-6c9.389.0 17 7.611 17 17s-7.611 17-17 17S2 20.389 2 11 9.611-6 19-6zm42.256 7.338 3.345 19.48h.075l3.42-19.48h5l-6.052 26.324h-5L56.22 1.338h5.037zm20.706.0 5.413 26.324h-4.699l-.94-6.13h-4.548l-.902 6.13h-4.435l5.413-26.324h4.698zm18.038.0v3.723h-4.849v22.6h-4.699v-22.6h-4.81V1.338H1e2zM19 4a7 7 0 100 14 7 7 0 000-14zm60.557 4.295h-.113l-1.466 9.439h3.007l-1.428-9.439z" fill="#fff" fill-rule="nonzero" mask="url(#logoB)"/></g></svg></span>
+  </a>
+  <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      
+      
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="nav-link active" href="../../../docs/" ><span class="active">Documentation</span></a>
+      </li>
+      
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="nav-link" href="../../../about/" ><span>About</span></a>
+      </li>
+      
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        
+        
+        
+        
+        
+        
+        <a class="nav-link" href="https://app.cvat.ai"  ><span>Try it now</span></a>
+      </li>
+      
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        
+        
+        
+        
+        
+        
+        <a class="nav-link" href="https://github.com/cvat-ai/cvat"  ><i class='fab fa-github'></i><span>GitHub</span></a>
+      </li>
+      
+      
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-target="#dropdown_ver" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            develop
+          </a>
+        </li>
+        
+      
+      
+    </ul>
+  </div>
+  <div class="dropdown-menu" id="dropdown_ver" aria-labelledby="navbarDropdownMenuLink">
+    
+      
+        <a class="dropdown-item" href="../../../docs/api_sdk/">Latest version</a>
+    
+      
+        <a class="dropdown-item" href="../../../v1.5.0/docs/api_sdk/">v1.5.0</a>
+    
+      
+        <a class="dropdown-item" href="../../../v1.6.0/docs/api_sdk/">v1.6.0</a>
+    
+      
+        <a class="dropdown-item" href="../../../v1.7.0/docs/api_sdk/">v1.7.0</a>
+    
+      
+        <a class="dropdown-item" href="../../../v2.0.0/docs/api_sdk/">v2.0.0</a>
+    
+      
+        <a class="dropdown-item" href="../../../v2.1.0/docs/api_sdk/">v2.1.0</a>
+    
+      
+        <a class="dropdown-item" href="../../../v2.2.0/docs/api_sdk/">v2.2.0</a>
+    
+  </div>
+  <div class="navbar-nav d-none d-lg-block">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.a230f16f8c76ee28ba250b65f5818600.json"
+  data-offline-search-base-href="../../../"
+  data-offline-search-max-results="10"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="../../../docs/api_sdk/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">API &amp; SDK</h1>
+<div class="lead">How to interact with CVAT</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-9653875e05cd632aa18a331c293aad24">Server API</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-b9cf79b7ee616f7495fa1ea644470497">Python SDK</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-8230992378cdf4f17ad61d16f3c761cc">Low-level API</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.2: <a href="#pg-d52545cf80fdbb2198fed55d851a9e90">High-level API</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.3: <a href="#pg-d6ace9d6266b4c8cd2588a366fd7fad7">Developer guide</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-9582c4a2a6aba3790dd06005be2c6b96">Command line interface (CLI)</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-8f4289d6a6e8c1027da2ccb009e87528">Frequently asked questions</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="overview">Overview</h2>
+<p>In the modern world, it is often necessary to integrate different tools to work together.
+CVAT provides the following integration layers:</p>
+<ul>
+<li>Server REST API + Swagger schema</li>
+<li>Python client library (SDK)
+<ul>
+<li>REST API client</li>
+<li>High-level wrappers</li>
+</ul>
+</li>
+<li>Command-line tool (CLI)</li>
+</ul>
+<p>In this section, you can find documentation about each separate layer.</p>
+<h2 id="component-compatibility">Component compatibility</h2>
+<p>Currently, the only supported configuration is when the server API major and minor versions
+are the same as SDK and CLI major and minor versions, e.g. server v2.1.* is supported by
+SDK and CLI v2.1.*. Different versions may have incompatibilities, which lead to some functions
+in SDK or CLI may not work properly.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9653875e05cd632aa18a331c293aad24">1 - Server API</h1>
+    
+	<h2 id="overview">Overview</h2>
+<p>CVAT server provides HTTP REST API for interaction. Each client application - be it
+a command line tool, browser or a script - all interact with CVAT via HTTP requests and
+responses:</p>
+<p><img src="../../../images/server_api_interaction.svg" alt="CVAT server interaction image"></p>
+<h2 id="api-schema">API schema</h2>
+<p>You can obtain schema for your server at <code>&lt;yourserver&gt;/api/docs</code>. For example,
+the official CVAT.ai application has API documentation <a href="https://app.cvat.ai/api/docs/">here</a>.</p>
+<h2 id="examples">Examples</h2>
+<p>Here you can see how a task is created in CVAT:</p>
+<p><img src="../../../images/server_api_create_task_example.png" alt="Task creation example"></p>
+<ol>
+<li>At first, we have to login</li>
+<li>Then we create a task from its configuration</li>
+<li>Then we send task data (images, videos etc.)</li>
+<li>We wait for data processing and finish</li>
+</ol>
+<h2 id="design-principles">Design principles</h2>
+<p>Common pattern for our REST API is <code>&lt;VERB&gt; [namespace] &lt;objects&gt; &lt;id&gt; &lt;action&gt;</code>.</p>
+<ul>
+<li><code>VERB</code> can be <code>POST</code>, <code>GET</code>, <code>PATCH</code>, <code>PUT</code>, <code>DELETE</code>.</li>
+<li><code>namespace</code> should scope some specific functionality like <code>auth</code>, <code>lambda</code>.
+It is optional in the scheme.</li>
+<li>Typical <code>objects</code> are <code>tasks</code>, <code>projects</code>, <code>jobs</code>.</li>
+<li>When you want to extract a specific object from a collection, just specify its <code>id</code>.</li>
+<li>An <code>action</code> can be used to simplify REST API or provide an endpoint for entities
+without <code>objects</code> endpoint like <code>annotations</code>, <code>data</code>, <code>data/meta</code>. Note: action
+should not duplicate other endpoints without a reason.</li>
+</ul>
+<p>When you&rsquo;re developing new endpoints, follow these guidelines:</p>
+<ul>
+<li>Use nouns instead of verbs in endpoint paths. For example,
+<code>POST /api/tasks</code> instead of <code>POST /api/tasks/create</code>.</li>
+<li>Accept and respond with JSON whenever it is possible</li>
+<li>Name collections with plural nouns (e.g. <code>/tasks</code>, <code>/projects</code>)</li>
+<li>Try to keep the API structure flat. Prefer two separate endpoints
+for <code>/projects</code> and <code>/tasks</code> instead of <code>/projects/:id1/tasks/:id2</code>. Use
+filters to extract necessary information like <code>/tasks/:id2?project=:id1</code>.
+In some cases it is useful to get all <code>tasks</code>. If the structure is
+hierarchical, it cannot be done easily. Also you have to know both <code>:id1</code>
+and <code>:id2</code> to get information about the task.
+<em>Note: for now we accept <code>GET /tasks/:id2/jobs</code> but it should be replaced
+by <code>/jobs?task=:id2</code> in the future</em>.</li>
+<li>Handle errors gracefully and return standard error codes (e.g. <code>201</code>, <code>400</code>)</li>
+<li>Allow filtering, sorting, and pagination</li>
+<li>Maintain good security practices</li>
+<li>Cache data to improve performance</li>
+<li>Versioning our APIs. It should be done when you delete an endpoint or modify
+its behaviors. Versioning uses a schema with <code>Accept</code> header with vendor media type.</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/">Best practices for REST API design</a></li>
+<li><a href="https://stackoverflow.com/questions/20951419/what-are-best-practices-for-rest-nested-resources">Flat vs. nested resources</a></li>
+<li><a href="https://www.moesif.com/blog/technical/api-design/REST-API-Design-Best-Practices-for-Sub-and-Nested-Resources/">REST API Design Best Practices for Sub and Nested Resources</a></li>
+<li><a href="https://jsonapi.org/">A specification for building APIs in JSON</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b9cf79b7ee616f7495fa1ea644470497">2 - Python SDK</h1>
+    
+	<h2 id="overview">Overview</h2>
+<p>SDK is a Python library. It provides you access to Python function and objects, which
+simplify server interaction and provide additional functionality like data validation.</p>
+<p>SDK API includes 2 layers:</p>
+<ul>
+<li>Low-level API with REST API wrappers. Located in at <code>cvat_sdk.api_client</code>. <a href="../../../api_sdk/sdk/lowlevel-api">Read more</a></li>
+<li>High-level API. Located at <code>cvat_sdk.core</code>. <a href="../../../api_sdk/sdk/highlevel-api">Read more</a></li>
+</ul>
+<p>Roughly, low-level API provides single-request operations, while the high-level one allows you
+to use composite, multi-request operations and have local counterparts for server objects.
+For most uses, the high-level API should be good enough and sufficient, and it should be
+right point to start your integration with CVAT.</p>
+<h2 id="installation">Installation</h2>
+<p>To install an <a href="https://pypi.org/project/cvat-sdk/">official release of CVAT SDK</a> use this command:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install cvat-sdk
+</code></pre></div><p>We support Python versions 3.7 - 3.9.</p>
+<h2 id="usage">Usage</h2>
+<p>To import the package components, use the following code:</p>
+<p>For high-level API:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">cvat_sdk</span>
+<span style="color:#8f5902;font-style:italic"># or</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">cvat_sdk.core</span>
+</code></pre></div><p>For low-level API:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">cvat_sdk.api_client</span>
+</code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8230992378cdf4f17ad61d16f3c761cc">2.1 - Low-level API</h1>
+    
+	<h2 id="overview">Overview</h2>
+<p>Low-level API is useful if you need to work directly with REST API, but want
+to have data validation and syntax assistance from your code editor. The code
+on this layer is autogenerated.</p>
+<p>Code of this component is located in <code>cvat_sdk.api_client</code>.</p>
+<h2 id="example">Example</h2>
+<p>Let&rsquo;s see how a task with local files can be created. We will use the basic auth
+to make things simpler.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">time</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">sleep</span>
+<span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">cvat_sdk.api_client</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">Configuration</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ApiClient</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">models</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">apis</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">exceptions</span>
+
+<span style="color:#000">configuration</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Configuration</span><span style="color:#000;font-weight:bold">(</span>
+    <span style="color:#000">host</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://localhost&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#000">username</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;YOUR_USERNAME&#39;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#000">password</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;YOUR_PASSWORD&#39;</span><span style="color:#000;font-weight:bold">,</span>
+<span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#8f5902;font-style:italic"># Enter a context with an instance of the API client</span>
+<span style="color:#204a87;font-weight:bold">with</span> <span style="color:#000">ApiClient</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">configuration</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">api_client</span><span style="color:#000;font-weight:bold">:</span>
+    <span style="color:#8f5902;font-style:italic"># Parameters can be passed as a plain dict with JSON-serialized data</span>
+    <span style="color:#8f5902;font-style:italic"># or as model objects (from cvat_sdk.api_client.models), including</span>
+    <span style="color:#8f5902;font-style:italic"># mixed variants.</span>
+    <span style="color:#8f5902;font-style:italic">#</span>
+    <span style="color:#8f5902;font-style:italic"># In case of dicts, keys must be the same as members of models.I&lt;ModelName&gt;</span>
+    <span style="color:#8f5902;font-style:italic"># interfaces and values must be convertible to the corresponding member</span>
+    <span style="color:#8f5902;font-style:italic"># value types (e.g. a date or string enum value can be parsed from a string).</span>
+    <span style="color:#8f5902;font-style:italic">#</span>
+    <span style="color:#8f5902;font-style:italic"># In case of model objects, data must be of the corresponding</span>
+    <span style="color:#8f5902;font-style:italic"># models.&lt;ModelName&gt; types.</span>
+    <span style="color:#8f5902;font-style:italic">#</span>
+    <span style="color:#8f5902;font-style:italic"># Let&#39;s use a dict here. It should look like models.ITaskWriteRequest</span>
+    <span style="color:#000">task_spec</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#4e9a06">&#39;name&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;example task&#39;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#4e9a06">&#34;labels&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[{</span>
+            <span style="color:#4e9a06">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;car&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#4e9a06">&#34;color&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;#ff00ff&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#4e9a06">&#34;attributes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+                <span style="color:#000;font-weight:bold">{</span>
+                    <span style="color:#4e9a06">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;a&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#4e9a06">&#34;mutable&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#3465a4">True</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#4e9a06">&#34;input_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;number&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#4e9a06">&#34;default_value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#4e9a06">&#34;values&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;4&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;6&#34;</span><span style="color:#000;font-weight:bold">]</span>
+                <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000;font-weight:bold">]</span>
+        <span style="color:#000;font-weight:bold">}],</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#204a87;font-weight:bold">try</span><span style="color:#000;font-weight:bold">:</span>
+        <span style="color:#8f5902;font-style:italic"># Apis can be accessed as ApiClient class members</span>
+        <span style="color:#8f5902;font-style:italic"># We use different models for input and output data. For input data,</span>
+        <span style="color:#8f5902;font-style:italic"># models are typically called like &#34;*Request&#34;. Output data models have</span>
+        <span style="color:#8f5902;font-style:italic"># no suffix.</span>
+        <span style="color:#000;font-weight:bold">(</span><span style="color:#000">task</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">response</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">api_client</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">tasks_api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">create</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">task_spec</span><span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#204a87;font-weight:bold">except</span> <span style="color:#000">exceptions</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">ApiException</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">:</span>
+        <span style="color:#8f5902;font-style:italic"># We can catch the basic exception type, or a derived type</span>
+        <span style="color:#204a87;font-weight:bold">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Exception when trying to create a task: </span><span style="color:#4e9a06">%s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span> <span style="color:#ce5c00;font-weight:bold">%</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span>
+
+    <span style="color:#8f5902;font-style:italic"># Here we will use models instead of a dict</span>
+    <span style="color:#000">task_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">models</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">DataRequest</span><span style="color:#000;font-weight:bold">(</span>
+        <span style="color:#000">image_quality</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">75</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">client_files</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000;font-weight:bold">[</span>
+            <span style="color:#204a87">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;image1.jpg&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;rb&#39;</span><span style="color:#000;font-weight:bold">),</span>
+            <span style="color:#204a87">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;image2.jpg&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;rb&#39;</span><span style="color:#000;font-weight:bold">),</span>
+        <span style="color:#000;font-weight:bold">],</span>
+    <span style="color:#000;font-weight:bold">)</span>
+
+    <span style="color:#8f5902;font-style:italic"># If we pass binary file objects, we need to specify content type.</span>
+    <span style="color:#8f5902;font-style:italic"># For this endpoint, we don&#39;t have response data</span>
+    <span style="color:#000;font-weight:bold">(</span><span style="color:#000">_</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">response</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">api_client</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">tasks_api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">create_data</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">data_request</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">task_data</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">_content_type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;multipart/form-data&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+        <span style="color:#8f5902;font-style:italic"># we can choose to check the response status manually</span>
+        <span style="color:#8f5902;font-style:italic"># and disable the response data parsing</span>
+        <span style="color:#000">_check_status</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">False</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_parse_response</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">False</span>
+    <span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#204a87;font-weight:bold">assert</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">status</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">202</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">msg</span>
+
+    <span style="color:#8f5902;font-style:italic"># Wait till task data is processed</span>
+    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">_</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#204a87">range</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">):</span>
+        <span style="color:#000;font-weight:bold">(</span><span style="color:#000">status</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">api_client</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">tasks_api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">retrieve_status</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">)</span>
+        <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">state</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">value</span> <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;Finished&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;Failed&#39;</span><span style="color:#000;font-weight:bold">]:</span>
+            <span style="color:#204a87;font-weight:bold">break</span>
+        <span style="color:#000">sleep</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0.1</span><span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#204a87;font-weight:bold">assert</span> <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">state</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#4e9a06">&#39;Finished&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">status</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">message</span>
+
+    <span style="color:#8f5902;font-style:italic"># Update the task object and check the task size</span>
+    <span style="color:#000;font-weight:bold">(</span><span style="color:#000">task</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">api_client</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">tasks_api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">retrieve</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#204a87;font-weight:bold">assert</span> <span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">size</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">4</span>
+</code></pre></div><h2 id="available-api-endpoints">Available API Endpoints</h2>
+<p>All URIs are relative to <em><code>http://localhost</code></em></p>
+<p>APIs can be instanted directly like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">cvat_sdk.api_client</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">ApiClient</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">apis</span>
+
+<span style="color:#000">api_client</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ApiClient</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">auth_api</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">apis</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">AuthApi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">api_client</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">auth_api</span><span style="color:#ce5c00;font-weight:bold">.&lt;</span><span style="color:#000">operation</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><p>Or they can be accessed as <code>ApiClient</code> object members:</p>
+<pre><code>from cvat_sdk.api_client import ApiClient
+
+api_client = ApiClient(...)
+api_client.auth_api.&lt;operation&gt;(...)
+</code></pre><!--lint disable table-cell-padding-->
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Method</th>
+<th>HTTP request</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_login</strong></td>
+<td><strong>POST</strong> /api/auth/login</td>
+<td></td>
+</tr>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_logout</strong></td>
+<td><strong>POST</strong> /api/auth/logout</td>
+<td></td>
+</tr>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_password_change</strong></td>
+<td><strong>POST</strong> /api/auth/password/change</td>
+<td></td>
+</tr>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_password_reset</strong></td>
+<td><strong>POST</strong> /api/auth/password/reset</td>
+<td></td>
+</tr>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_password_reset_confirm</strong></td>
+<td><strong>POST</strong> /api/auth/password/reset/confirm</td>
+<td></td>
+</tr>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_register</strong></td>
+<td><strong>POST</strong> /api/auth/register</td>
+<td></td>
+</tr>
+<tr>
+<td><em>AuthApi</em></td>
+<td><strong>auth_create_signing</strong></td>
+<td><strong>POST</strong> /api/auth/signing</td>
+<td>This method signs URL for access to the server</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_create</strong></td>
+<td><strong>POST</strong> /api/cloudstorages</td>
+<td>Method creates a cloud storage with a specified characteristics</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_destroy</strong></td>
+<td><strong>DELETE</strong> /api/cloudstorages/{id}</td>
+<td>Method deletes a specific cloud storage</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_list</strong></td>
+<td><strong>GET</strong> /api/cloudstorages</td>
+<td>Returns a paginated list of storages according to query parameters</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/cloudstorages/{id}</td>
+<td>Methods does a partial update of chosen fields in a cloud storage instance</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_retrieve</strong></td>
+<td><strong>GET</strong> /api/cloudstorages/{id}</td>
+<td>Method returns details of a specific cloud storage</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_retrieve_actions</strong></td>
+<td><strong>GET</strong> /api/cloudstorages/{id}/actions</td>
+<td>Method returns allowed actions for the cloud storage</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_retrieve_content</strong></td>
+<td><strong>GET</strong> /api/cloudstorages/{id}/content</td>
+<td>Method returns a manifest content</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_retrieve_preview</strong></td>
+<td><strong>GET</strong> /api/cloudstorages/{id}/preview</td>
+<td>Method returns a preview image from a cloud storage</td>
+</tr>
+<tr>
+<td><em>CloudstoragesApi</em></td>
+<td><strong>cloudstorages_retrieve_status</strong></td>
+<td><strong>GET</strong> /api/cloudstorages/{id}/status</td>
+<td>Method returns a cloud storage status</td>
+</tr>
+<tr>
+<td><em>CommentsApi</em></td>
+<td><strong>comments_create</strong></td>
+<td><strong>POST</strong> /api/comments</td>
+<td>Method creates a comment</td>
+</tr>
+<tr>
+<td><em>CommentsApi</em></td>
+<td><strong>comments_destroy</strong></td>
+<td><strong>DELETE</strong> /api/comments/{id}</td>
+<td>Method deletes a comment</td>
+</tr>
+<tr>
+<td><em>CommentsApi</em></td>
+<td><strong>comments_list</strong></td>
+<td><strong>GET</strong> /api/comments</td>
+<td>Method returns a paginated list of comments according to query parameters</td>
+</tr>
+<tr>
+<td><em>CommentsApi</em></td>
+<td><strong>comments_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/comments/{id}</td>
+<td>Methods does a partial update of chosen fields in a comment</td>
+</tr>
+<tr>
+<td><em>CommentsApi</em></td>
+<td><strong>comments_retrieve</strong></td>
+<td><strong>GET</strong> /api/comments/{id}</td>
+<td>Method returns details of a comment</td>
+</tr>
+<tr>
+<td><em>InvitationsApi</em></td>
+<td><strong>invitations_create</strong></td>
+<td><strong>POST</strong> /api/invitations</td>
+<td>Method creates an invitation</td>
+</tr>
+<tr>
+<td><em>InvitationsApi</em></td>
+<td><strong>invitations_destroy</strong></td>
+<td><strong>DELETE</strong> /api/invitations/{key}</td>
+<td>Method deletes an invitation</td>
+</tr>
+<tr>
+<td><em>InvitationsApi</em></td>
+<td><strong>invitations_list</strong></td>
+<td><strong>GET</strong> /api/invitations</td>
+<td>Method returns a paginated list of invitations according to query parameters</td>
+</tr>
+<tr>
+<td><em>InvitationsApi</em></td>
+<td><strong>invitations_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/invitations/{key}</td>
+<td>Methods does a partial update of chosen fields in an invitation</td>
+</tr>
+<tr>
+<td><em>InvitationsApi</em></td>
+<td><strong>invitations_retrieve</strong></td>
+<td><strong>GET</strong> /api/invitations/{key}</td>
+<td>Method returns details of an invitation</td>
+</tr>
+<tr>
+<td><em>IssuesApi</em></td>
+<td><strong>issues_create</strong></td>
+<td><strong>POST</strong> /api/issues</td>
+<td>Method creates an issue</td>
+</tr>
+<tr>
+<td><em>IssuesApi</em></td>
+<td><strong>issues_destroy</strong></td>
+<td><strong>DELETE</strong> /api/issues/{id}</td>
+<td>Method deletes an issue</td>
+</tr>
+<tr>
+<td><em>IssuesApi</em></td>
+<td><strong>issues_list</strong></td>
+<td><strong>GET</strong> /api/issues</td>
+<td>Method returns a paginated list of issues according to query parameters</td>
+</tr>
+<tr>
+<td><em>IssuesApi</em></td>
+<td><strong>issues_list_comments</strong></td>
+<td><strong>GET</strong> /api/issues/{id}/comments</td>
+<td>The action returns all comments of a specific issue</td>
+</tr>
+<tr>
+<td><em>IssuesApi</em></td>
+<td><strong>issues_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/issues/{id}</td>
+<td>Methods does a partial update of chosen fields in an issue</td>
+</tr>
+<tr>
+<td><em>IssuesApi</em></td>
+<td><strong>issues_retrieve</strong></td>
+<td><strong>GET</strong> /api/issues/{id}</td>
+<td>Method returns details of an issue</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_create_annotations</strong></td>
+<td><strong>POST</strong> /api/jobs/{id}/annotations/</td>
+<td>Method allows to upload job annotations</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_destroy_annotations</strong></td>
+<td><strong>DELETE</strong> /api/jobs/{id}/annotations/</td>
+<td>Method deletes all annotations for a specific job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_list</strong></td>
+<td><strong>GET</strong> /api/jobs</td>
+<td>Method returns a paginated list of jobs according to query parameters</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_list_commits</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}/commits</td>
+<td>The action returns the list of tracked changes for the job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_list_issues</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}/issues</td>
+<td>Method returns list of issues for the job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/jobs/{id}</td>
+<td>Methods does a partial update of chosen fields in a job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_partial_update_annotations</strong></td>
+<td><strong>PATCH</strong> /api/jobs/{id}/annotations/</td>
+<td>Method performs a partial update of annotations in a specific job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_partial_update_annotations_file</strong></td>
+<td><strong>PATCH</strong> /api/jobs/{id}/annotations/{file_id}</td>
+<td>Allows to upload an annotation file chunk. Implements TUS file uploading protocol.</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_retrieve</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}</td>
+<td>Method returns details of a job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_retrieve_annotations</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}/annotations/</td>
+<td>Method returns annotations for a specific job as a JSON document. If format is specified a zip archive is returned.</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_retrieve_data</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}/data</td>
+<td>Method returns data for a specific job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_retrieve_data_meta</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}/data/meta</td>
+<td>Method provides a meta information about media files which are related with the job</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_retrieve_dataset</strong></td>
+<td><strong>GET</strong> /api/jobs/{id}/dataset</td>
+<td>Export job as a dataset in a specific format</td>
+</tr>
+<tr>
+<td><em>JobsApi</em></td>
+<td><strong>jobs_update_annotations</strong></td>
+<td><strong>PUT</strong> /api/jobs/{id}/annotations/</td>
+<td>Method performs an update of all annotations in a specific job</td>
+</tr>
+<tr>
+<td><em>LambdaApi</em></td>
+<td><strong>lambda_create_functions</strong></td>
+<td><strong>POST</strong> /api/lambda/functions/{func_id}</td>
+<td></td>
+</tr>
+<tr>
+<td><em>LambdaApi</em></td>
+<td><strong>lambda_create_requests</strong></td>
+<td><strong>POST</strong> /api/lambda/requests</td>
+<td>Method calls the function</td>
+</tr>
+<tr>
+<td><em>LambdaApi</em></td>
+<td><strong>lambda_list_functions</strong></td>
+<td><strong>GET</strong> /api/lambda/functions</td>
+<td>Method returns a list of functions</td>
+</tr>
+<tr>
+<td><em>LambdaApi</em></td>
+<td><strong>lambda_list_requests</strong></td>
+<td><strong>GET</strong> /api/lambda/requests</td>
+<td>Method returns a list of requests</td>
+</tr>
+<tr>
+<td><em>LambdaApi</em></td>
+<td><strong>lambda_retrieve_functions</strong></td>
+<td><strong>GET</strong> /api/lambda/functions/{func_id}</td>
+<td>Method returns the information about the function</td>
+</tr>
+<tr>
+<td><em>LambdaApi</em></td>
+<td><strong>lambda_retrieve_requests</strong></td>
+<td><strong>GET</strong> /api/lambda/requests/{id}</td>
+<td>Method returns the status of the request</td>
+</tr>
+<tr>
+<td><em>MembershipsApi</em></td>
+<td><strong>memberships_destroy</strong></td>
+<td><strong>DELETE</strong> /api/memberships/{id}</td>
+<td>Method deletes a membership</td>
+</tr>
+<tr>
+<td><em>MembershipsApi</em></td>
+<td><strong>memberships_list</strong></td>
+<td><strong>GET</strong> /api/memberships</td>
+<td>Method returns a paginated list of memberships according to query parameters</td>
+</tr>
+<tr>
+<td><em>MembershipsApi</em></td>
+<td><strong>memberships_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/memberships/{id}</td>
+<td>Methods does a partial update of chosen fields in a membership</td>
+</tr>
+<tr>
+<td><em>MembershipsApi</em></td>
+<td><strong>memberships_retrieve</strong></td>
+<td><strong>GET</strong> /api/memberships/{id}</td>
+<td>Method returns details of a membership</td>
+</tr>
+<tr>
+<td><em>OrganizationsApi</em></td>
+<td><strong>organizations_create</strong></td>
+<td><strong>POST</strong> /api/organizations</td>
+<td>Method creates an organization</td>
+</tr>
+<tr>
+<td><em>OrganizationsApi</em></td>
+<td><strong>organizations_destroy</strong></td>
+<td><strong>DELETE</strong> /api/organizations/{id}</td>
+<td>Method deletes an organization</td>
+</tr>
+<tr>
+<td><em>OrganizationsApi</em></td>
+<td><strong>organizations_list</strong></td>
+<td><strong>GET</strong> /api/organizations</td>
+<td>Method returns a paginated list of organizatins according to query parameters</td>
+</tr>
+<tr>
+<td><em>OrganizationsApi</em></td>
+<td><strong>organizations_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/organizations/{id}</td>
+<td>Methods does a partial update of chosen fields in an organization</td>
+</tr>
+<tr>
+<td><em>OrganizationsApi</em></td>
+<td><strong>organizations_retrieve</strong></td>
+<td><strong>GET</strong> /api/organizations/{id}</td>
+<td>Method returns details of an organization</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_create</strong></td>
+<td><strong>POST</strong> /api/projects</td>
+<td>Method creates a new project</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_create_backup</strong></td>
+<td><strong>POST</strong> /api/projects/backup/</td>
+<td>Methods create a project from a backup</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_create_dataset</strong></td>
+<td><strong>POST</strong> /api/projects/{id}/dataset/</td>
+<td>Import dataset in specific format as a project</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_destroy</strong></td>
+<td><strong>DELETE</strong> /api/projects/{id}</td>
+<td>Method deletes a specific project</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_list</strong></td>
+<td><strong>GET</strong> /api/projects</td>
+<td>Returns a paginated list of projects according to query parameters (12 projects per page)</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_list_tasks</strong></td>
+<td><strong>GET</strong> /api/projects/{id}/tasks</td>
+<td>Method returns information of the tasks of the project with the selected id</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/projects/{id}</td>
+<td>Methods does a partial update of chosen fields in a project</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_partial_update_backup_file</strong></td>
+<td><strong>PATCH</strong> /api/projects/backup/{file_id}</td>
+<td>Allows to upload a file chunk. Implements TUS file uploading protocol</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_partial_update_dataset_file</strong></td>
+<td><strong>PATCH</strong> /api/projects/{id}/dataset/{file_id}</td>
+<td>Allows to upload a file chunk. Implements TUS file uploading protocol.</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_retrieve</strong></td>
+<td><strong>GET</strong> /api/projects/{id}</td>
+<td>Method returns details of a specific project</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_retrieve_annotations</strong></td>
+<td><strong>GET</strong> /api/projects/{id}/annotations</td>
+<td>Method allows to download project annotations</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_retrieve_backup</strong></td>
+<td><strong>GET</strong> /api/projects/{id}/backup</td>
+<td>Methods creates a backup copy of a project</td>
+</tr>
+<tr>
+<td><em>ProjectsApi</em></td>
+<td><strong>projects_retrieve_dataset</strong></td>
+<td><strong>GET</strong> /api/projects/{id}/dataset/</td>
+<td>Export project as a dataset in a specific format</td>
+</tr>
+<tr>
+<td><em>RestrictionsApi</em></td>
+<td><strong>restrictions_retrieve_terms_of_use</strong></td>
+<td><strong>GET</strong> /api/restrictions/terms-of-use</td>
+<td>Method provides CVAT terms of use</td>
+</tr>
+<tr>
+<td><em>RestrictionsApi</em></td>
+<td><strong>restrictions_retrieve_user_agreements</strong></td>
+<td><strong>GET</strong> /api/restrictions/user-agreements</td>
+<td>Method provides user agreements that the user must accept to register</td>
+</tr>
+<tr>
+<td><em>SchemaApi</em></td>
+<td><strong>schema_retrieve</strong></td>
+<td><strong>GET</strong> /api/schema/</td>
+<td></td>
+</tr>
+<tr>
+<td><em>ServerApi</em></td>
+<td><strong>server_create_exception</strong></td>
+<td><strong>POST</strong> /api/server/exception</td>
+<td>Method saves an exception from a client on the server</td>
+</tr>
+<tr>
+<td><em>ServerApi</em></td>
+<td><strong>server_create_logs</strong></td>
+<td><strong>POST</strong> /api/server/logs</td>
+<td>Method saves logs from a client on the server</td>
+</tr>
+<tr>
+<td><em>ServerApi</em></td>
+<td><strong>server_list_share</strong></td>
+<td><strong>GET</strong> /api/server/share</td>
+<td>Returns all files and folders that are on the server along specified path</td>
+</tr>
+<tr>
+<td><em>ServerApi</em></td>
+<td><strong>server_retrieve_about</strong></td>
+<td><strong>GET</strong> /api/server/about</td>
+<td>Method provides basic CVAT information</td>
+</tr>
+<tr>
+<td><em>ServerApi</em></td>
+<td><strong>server_retrieve_annotation_formats</strong></td>
+<td><strong>GET</strong> /api/server/annotation/formats</td>
+<td>Method provides the list of supported annotations formats</td>
+</tr>
+<tr>
+<td><em>ServerApi</em></td>
+<td><strong>server_retrieve_plugins</strong></td>
+<td><strong>GET</strong> /api/server/plugins</td>
+<td>Method provides allowed plugins</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>jobs_partial_update_data_meta</strong></td>
+<td><strong>PATCH</strong> /api/jobs/{id}/data/meta</td>
+<td>Method provides a meta information about media files which are related with the job</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_create</strong></td>
+<td><strong>POST</strong> /api/tasks</td>
+<td>Method creates a new task in a database without any attached images and videos</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_create_annotations</strong></td>
+<td><strong>POST</strong> /api/tasks/{id}/annotations/</td>
+<td>Method allows to upload task annotations from a local file or a cloud storage</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_create_backup</strong></td>
+<td><strong>POST</strong> /api/tasks/backup/</td>
+<td>Method recreates a task from an attached task backup file</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_create_data</strong></td>
+<td><strong>POST</strong> /api/tasks/{id}/data/</td>
+<td>Method permanently attaches images or video to a task. Supports tus uploads, see more <a href="https://tus.io/">https://tus.io/</a></td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_destroy</strong></td>
+<td><strong>DELETE</strong> /api/tasks/{id}</td>
+<td>Method deletes a specific task, all attached jobs, annotations, and data</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_destroy_annotations</strong></td>
+<td><strong>DELETE</strong> /api/tasks/{id}/annotations/</td>
+<td>Method deletes all annotations for a specific task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_list</strong></td>
+<td><strong>GET</strong> /api/tasks</td>
+<td>Returns a paginated list of tasks according to query parameters (10 tasks per page)</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_list_jobs</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/jobs</td>
+<td>Method returns a list of jobs for a specific task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/tasks/{id}</td>
+<td>Methods does a partial update of chosen fields in a task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_partial_update_annotations</strong></td>
+<td><strong>PATCH</strong> /api/tasks/{id}/annotations/</td>
+<td>Method performs a partial update of annotations in a specific task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_partial_update_annotations_file</strong></td>
+<td><strong>PATCH</strong> /api/tasks/{id}/annotations/{file_id}</td>
+<td>Allows to upload an annotation file chunk. Implements TUS file uploading protocol.</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_partial_update_backup_file</strong></td>
+<td><strong>PATCH</strong> /api/tasks/backup/{file_id}</td>
+<td>Allows to upload a file chunk. Implements TUS file uploading protocol.</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_partial_update_data_file</strong></td>
+<td><strong>PATCH</strong> /api/tasks/{id}/data/{file_id}</td>
+<td>Allows to upload a file chunk. Implements TUS file uploading protocol.</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_partial_update_data_meta</strong></td>
+<td><strong>PATCH</strong> /api/tasks/{id}/data/meta</td>
+<td>Method provides a meta information about media files which are related with _he_task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}</td>
+<td>Method returns details of a specific task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve_annotations</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/annotations/</td>
+<td>Method allows to download task annotations</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve_backup</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/backup</td>
+<td>Method backup a specified task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve_data</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/data/</td>
+<td>Method returns data for a specific task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve_data_meta</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/data/meta</td>
+<td>Method provides a meta information about media files which are related with the task</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve_dataset</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/dataset</td>
+<td>Export task as a dataset in a specific format</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_retrieve_status</strong></td>
+<td><strong>GET</strong> /api/tasks/{id}/status</td>
+<td>When task is being created the method returns information about a status of the creation process</td>
+</tr>
+<tr>
+<td><em>TasksApi</em></td>
+<td><strong>tasks_update_annotations</strong></td>
+<td><strong>PUT</strong> /api/tasks/{id}/annotations/</td>
+<td>Method allows to upload task annotations</td>
+</tr>
+<tr>
+<td><em>UsersApi</em></td>
+<td><strong>users_destroy</strong></td>
+<td><strong>DELETE</strong> /api/users/{id}</td>
+<td>Method deletes a specific user from the server</td>
+</tr>
+<tr>
+<td><em>UsersApi</em></td>
+<td><strong>users_list</strong></td>
+<td><strong>GET</strong> /api/users</td>
+<td>Method provides a paginated list of users registered on the server</td>
+</tr>
+<tr>
+<td><em>UsersApi</em></td>
+<td><strong>users_partial_update</strong></td>
+<td><strong>PATCH</strong> /api/users/{id}</td>
+<td>Method updates chosen fields of a user</td>
+</tr>
+<tr>
+<td><em>UsersApi</em></td>
+<td><strong>users_retrieve</strong></td>
+<td><strong>GET</strong> /api/users/{id}</td>
+<td>Method provides information of a specific user</td>
+</tr>
+<tr>
+<td><em>UsersApi</em></td>
+<td><strong>users_retrieve_self</strong></td>
+<td><strong>GET</strong> /api/users/self</td>
+<td>Method returns an instance of a user who is currently authorized</td>
+</tr>
+</tbody>
+</table>
+<h2 id="available-models">Available Models</h2>
+<p>Models can be instantiated like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">cvat_sdk.api_client</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">models</span>
+
+<span style="color:#000">user_model</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">models</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">User</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">...</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><ul>
+<li>About</li>
+<li>AnnotationFileRequest</li>
+<li>AnnotationsRead</li>
+<li>Attribute</li>
+<li>AttributeRequest</li>
+<li>AttributeVal</li>
+<li>AttributeValRequest</li>
+<li>BackupWriteRequest</li>
+<li>BasicUser</li>
+<li>BasicUserRequest</li>
+<li>ChunkType</li>
+<li>CloudStorageRead</li>
+<li>CloudStorageWriteRequest</li>
+<li>CommentRead</li>
+<li>CommentReadOwner</li>
+<li>CommentWriteRequest</li>
+<li>CredentialsTypeEnum</li>
+<li>DataMetaRead</li>
+<li>DataRequest</li>
+<li>DatasetFileRequest</li>
+<li>DatasetFormat</li>
+<li>DatasetFormats</li>
+<li>DatasetWriteRequest</li>
+<li>Exception</li>
+<li>ExceptionRequest</li>
+<li>FileInfo</li>
+<li>FileInfoTypeEnum</li>
+<li>FrameMeta</li>
+<li>InputTypeEnum</li>
+<li>InvitationRead</li>
+<li>InvitationWrite</li>
+<li>InvitationWriteRequest</li>
+<li>IssueRead</li>
+<li>IssueWriteRequest</li>
+<li>JobAnnotationsUpdateRequest</li>
+<li>JobCommit</li>
+<li>JobRead</li>
+<li>JobStage</li>
+<li>JobStatus</li>
+<li>Label</li>
+<li>LabeledData</li>
+<li>LabeledDataRequest</li>
+<li>LabeledImage</li>
+<li>LabeledImageRequest</li>
+<li>LabeledShape</li>
+<li>LabeledShapeRequest</li>
+<li>LabeledTrack</li>
+<li>LabeledTrackRequest</li>
+<li>LocationEnum</li>
+<li>LogEvent</li>
+<li>LogEventRequest</li>
+<li>LoginRequest</li>
+<li>Manifest</li>
+<li>ManifestRequest</li>
+<li>MembershipRead</li>
+<li>MembershipWrite</li>
+<li>MetaUser</li>
+<li>OperationStatus</li>
+<li>OrganizationRead</li>
+<li>OrganizationWrite</li>
+<li>OrganizationWriteRequest</li>
+<li>PaginatedCloudStorageReadList</li>
+<li>PaginatedCommentReadList</li>
+<li>PaginatedInvitationReadList</li>
+<li>PaginatedIssueReadList</li>
+<li>PaginatedJobCommitList</li>
+<li>PaginatedJobReadList</li>
+<li>PaginatedMembershipReadList</li>
+<li>PaginatedMetaUserList</li>
+<li>PaginatedPolymorphicProjectList</li>
+<li>PaginatedTaskReadList</li>
+<li>PasswordChangeRequest</li>
+<li>PasswordResetConfirmRequest</li>
+<li>PasswordResetSerializerExRequest</li>
+<li>PatchedCloudStorageWriteRequest</li>
+<li>PatchedCommentWriteRequest</li>
+<li>PatchedDataMetaWriteRequest</li>
+<li>PatchedInvitationWriteRequest</li>
+<li>PatchedIssueWriteRequest</li>
+<li>PatchedJobWriteRequest</li>
+<li>PatchedLabelRequest</li>
+<li>PatchedLabeledDataRequest</li>
+<li>PatchedMembershipWriteRequest</li>
+<li>PatchedOrganizationWriteRequest</li>
+<li>PatchedProjectWriteRequest</li>
+<li>PatchedProjectWriteRequestTargetStorage</li>
+<li>PatchedTaskWriteRequest</li>
+<li>PatchedTaskWriteRequestTargetStorage</li>
+<li>PatchedUserRequest</li>
+<li>Plugins</li>
+<li>PolymorphicProject</li>
+<li>ProjectFileRequest</li>
+<li>ProjectRead</li>
+<li>ProjectReadAssignee</li>
+<li>ProjectReadOwner</li>
+<li>ProjectReadTargetStorage</li>
+<li>ProjectSearch</li>
+<li>ProjectWriteRequest</li>
+<li>ProviderTypeEnum</li>
+<li>RestAuthDetail</li>
+<li>RestrictedRegister</li>
+<li>RestrictedRegisterRequest</li>
+<li>RoleEnum</li>
+<li>RqStatus</li>
+<li>RqStatusStateEnum</li>
+<li>Segment</li>
+<li>ShapeType</li>
+<li>SigningRequest</li>
+<li>SimpleJob</li>
+<li>SortingMethod</li>
+<li>Storage</li>
+<li>StorageMethod</li>
+<li>StorageRequest</li>
+<li>StorageType</li>
+<li>SubLabeledShape</li>
+<li>SubLabeledShapeRequest</li>
+<li>SubLabeledTrack</li>
+<li>SubLabeledTrackRequest</li>
+<li>Sublabel</li>
+<li>SublabelRequest</li>
+<li>TaskAnnotationsUpdateRequest</li>
+<li>TaskAnnotationsWriteRequest</li>
+<li>TaskFileRequest</li>
+<li>TaskRead</li>
+<li>TaskReadTargetStorage</li>
+<li>TaskWriteRequest</li>
+<li>Token</li>
+<li>TrackedShape</li>
+<li>TrackedShapeRequest</li>
+<li>User</li>
+<li>UserAgreement</li>
+<li>UserAgreementRequest</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d52545cf80fdbb2198fed55d851a9e90">2.2 - High-level API</h1>
+    
+	<h2 id="overview">Overview</h2>
+<p>This layer provides high-level APIs, allowing easier access to server operations.
+API includes <em>Repositories</em> and <em>Entities</em>. Repositories provide management
+operations for Entitites. Entitites represent separate objects on the server
+(e.g. tasks, jobs etc).</p>
+<p>Code of this component is located in <code>cvat_sdk.core</code>.</p>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">cvat_sdk</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">make_client</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">models</span>
+<span style="color:#204a87;font-weight:bold">from</span> <span style="color:#000">cvat_sdk.core.proxies.tasks</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">ResourceType</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Task</span>
+
+<span style="color:#204a87;font-weight:bold">with</span> <span style="color:#000">make_client</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">host</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://localhost&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">client</span><span style="color:#000;font-weight:bold">:</span>
+    <span style="color:#8f5902;font-style:italic"># Authorize using the basic auth</span>
+    <span style="color:#000">client</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">login</span><span style="color:#000;font-weight:bold">((</span><span style="color:#4e9a06">&#39;YOUR_USERNAME&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;YOUR_PASSWORD&#39;</span><span style="color:#000;font-weight:bold">))</span>
+
+    <span style="color:#8f5902;font-style:italic"># Models are used the same way as in the layer 1</span>
+    <span style="color:#000">task_spec</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#4e9a06">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;example task 2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#4e9a06">&#34;labels&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+            <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#4e9a06">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;car&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                <span style="color:#4e9a06">&#34;color&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;#ff00ff&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                <span style="color:#4e9a06">&#34;attributes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+                    <span style="color:#000;font-weight:bold">{</span>
+                        <span style="color:#4e9a06">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;a&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                        <span style="color:#4e9a06">&#34;mutable&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#3465a4">True</span><span style="color:#000;font-weight:bold">,</span>
+                        <span style="color:#4e9a06">&#34;input_type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;number&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                        <span style="color:#4e9a06">&#34;default_value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                        <span style="color:#4e9a06">&#34;values&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;4&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;6&#34;</span><span style="color:#000;font-weight:bold">],</span>
+                    <span style="color:#000;font-weight:bold">}</span>
+                <span style="color:#000;font-weight:bold">],</span>
+            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">],</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#8f5902;font-style:italic"># Different repositories can be accessed as the Client class members.</span>
+    <span style="color:#8f5902;font-style:italic"># They may provide both simple and complex operations,</span>
+    <span style="color:#8f5902;font-style:italic"># such as entity creation, retrieval and removal.</span>
+    <span style="color:#000">task</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">client</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">tasks</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">create_from_data</span><span style="color:#000;font-weight:bold">(</span>
+        <span style="color:#000">spec</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">task_spec</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">resource_type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">ResourceType</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">LOCAL</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">resources</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;image1.jpg&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;image2.png&#39;</span><span style="color:#000;font-weight:bold">],</span>
+    <span style="color:#000;font-weight:bold">)</span>
+
+    <span style="color:#8f5902;font-style:italic"># Task object is already up-to-date with its server counterpart</span>
+    <span style="color:#204a87;font-weight:bold">assert</span> <span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">size</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">2</span>
+
+    <span style="color:#8f5902;font-style:italic"># An entity needs to be fetch()-ed to reflect the latest changes.</span>
+    <span style="color:#8f5902;font-style:italic"># It can be update()-d and remove()-d depending on the entity type.</span>
+    <span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">({</span><span style="color:#4e9a06">&#39;name&#39;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;mytask&#39;</span><span style="color:#000;font-weight:bold">})</span>
+    <span style="color:#000">task</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">remove</span><span style="color:#000;font-weight:bold">()</span>
+</code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d6ace9d6266b4c8cd2588a366fd7fad7">2.3 - Developer guide</h1>
+    
+	<h2 id="overview">Overview</h2>
+<p>This package contains manually written and generated files. We store only sources in
+the repository. To get the full package, one need to generate missing package files.</p>
+<h2 id="package-file-layout">Package file layout</h2>
+<ul>
+<li><code>gen/</code> - generator files</li>
+<li><code>cvat_sdk/</code> - Python package root</li>
+<li><code>cvat_sdk/api_client</code> - autogenerated low-level package code</li>
+<li><code>cvat_sdk/core</code> - high-level package code</li>
+</ul>
+<h2 id="how-to-generate-package-code">How to generate package code</h2>
+<ol>
+<li>Obtain the server API schema</li>
+</ol>
+<p>If you have a local custom version of the server, run the following command in the terminal.
+You need to be able to execute django server. Server installation instructions are available
+<a href="../../../contributing/development-environment">here</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p cvat-sdk/schema/ <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> python manage.py spectacular --file cvat-sdk/schema/schema.yml
+</code></pre></div><p>If you want to use docker instead:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f docker-compose.yml -f docker-compose.dev.yml run <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    --no-deps --entrypoint <span style="color:#4e9a06">&#39;/usr/bin/env python&#39;</span> --rm -u <span style="color:#4e9a06">&#34;</span><span style="color:#204a87;font-weight:bold">$(</span>id -u<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">&#34;</span>:<span style="color:#4e9a06">&#34;</span><span style="color:#204a87;font-weight:bold">$(</span>id -g<span style="color:#204a87;font-weight:bold">)</span><span style="color:#4e9a06">&#34;</span> -v <span style="color:#4e9a06">&#34;</span><span style="color:#000">$PWD</span><span style="color:#4e9a06">&#34;</span>:<span style="color:#4e9a06">&#34;/local&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    cvat_server <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    manage.py spectacular --file /local/cvat-sdk/schema/schema.yml
+</code></pre></div><p>If you don&rsquo;t have access to the server sources, but have a working instance,
+you can also get schema from <code>&lt;yourserver&gt;/api/docs</code>:</p>
+<p><img src="../../../images/download_server_schema.png" alt="Download server schema button image"></p>
+<ol start="2">
+<li>Install generator dependencies:</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install -r gen/requirements.txt
+</code></pre></div><ol start="3">
+<li>Generate package code (call from the package root directory!):</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./gen/generate.sh
+</code></pre></div><ol start="4">
+<li>To allow editing of the package, install it with <code>pip install -e cvat-sdk/</code>.</li>
+</ol>
+<h2 id="how-to-edit-templates">How to edit templates</h2>
+<p>If you want to edit templates, obtain them from the generator first:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -v <span style="color:#000">$PWD</span>:/local <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    openapitools/openapi-generator-cli author template <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>        -o /local/generator_templates -g python
+</code></pre></div><p>Then, you can copy the modified version of the template you need into
+the <code>gen/templates/openapi-generator/</code> directory.</p>
+<p>Relevant links:</p>
+<ul>
+<li><a href="https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/java/org/openapitools/codegen">Generator implementation, available variables in templates</a></li>
+<li><a href="https://github.com/OpenAPITools/openapi-generator/wiki/Mustache-Template-Variables">Mustache syntax in the generator</a></li>
+</ul>
+<h2 id="how-to-test">How to test</h2>
+<p>API client tests are integrated into REST API tests in <code>/tests/python/rest_api</code>
+and SDK tests are placed next to them in <code>/tests/python/sdk</code>.
+To execute, run:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pytest tests/python/rest_api tests/python/sdk
+</code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9582c4a2a6aba3790dd06005be2c6b96">3 - Command line interface (CLI)</h1>
+    
+	<h2 id="overview">Overview</h2>
+<p>A simple command line interface for working with CVAT tasks. At the moment it
+implements a basic feature set but may serve as the starting point for a more
+comprehensive CVAT administration tool in the future.</p>
+<p>Overview of functionality:</p>
+<ul>
+<li>Create a new task (supports name, bug tracker, project, labels JSON, local/share/remote files)</li>
+<li>Delete tasks (supports deleting a list of task IDs)</li>
+<li>List all tasks (supports basic CSV or JSON output)</li>
+<li>Download JPEG frames (supports a list of frame IDs)</li>
+<li>Dump annotations (supports all formats via format string)</li>
+<li>Upload annotations for a task in the specified format (e.g. &lsquo;YOLO ZIP 1.0&rsquo;)</li>
+<li>Export and download a whole task</li>
+<li>Import a task</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>To install an <a href="https://pypi.org/project/cvat-cli/">official release of CVAT CLI</a>, use this command:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install cvat-cli
+</code></pre></div><p>We support Python versions 3.7 - 3.9.</p>
+<h2 id="usage">Usage</h2>
+<p>You can get help with <code>cvat-cli --help</code>.</p>
+<pre><code>usage: cvat-cli [-h] [--auth USER:[PASS]]
+  [--server-host SERVER_HOST] [--server-port SERVER_PORT] [--debug]
+  {create,delete,ls,frames,dump,upload,export,import} ...
+
+Perform common operations related to CVAT tasks.
+
+positional arguments:
+  {create,delete,ls,frames,dump,upload,export,import}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --auth USER:[PASS]    defaults to the current user and supports the PASS
+                        environment variable or password prompt.
+  --server-host SERVER_HOST
+                        host (default: localhost)
+  --server-port SERVER_PORT
+                        port (default: 8080)
+  --debug               show debug output
+</code></pre><p>You can get help for each positional argument, e.g. <code>ls</code>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli ls -h
+</code></pre></div><pre><code>usage: cvat-cli ls [-h] [--json]
+
+List all CVAT tasks in simple or JSON format.
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --json      output JSON data
+</code></pre><h2 id="examples">Examples</h2>
+<h3 id="create">Create</h3>
+<p>Description of the options you can find in
+<a href="../../../docs/manual/basics/creating_an_annotation_task/">Creating an annotation task</a> section.</p>
+<p>For create a task you need file contain labels in the <code>json</code> format, you can create a JSON label specification
+by using the <a href="../../../docs/manual/basics/creating_an_annotation_task/#labels">label constructor</a>.</p>
+<details>
+<summary>Example JSON labels file</summary>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;cat&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;attributes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+    <span style="color:#000;font-weight:bold">},</span>
+    <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;dog&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;attributes&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">]</span>
+</code></pre></div></details>
+<br>
+<ul>
+<li>Create a task named &ldquo;new task&rdquo; on the default server &ldquo;localhost:8080&rdquo;, labels from the file &ldquo;labels.json&rdquo;
+and local images &ldquo;file1.jpg&rdquo; and &ldquo;file2.jpg&rdquo;, the task will be created as current user:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli create <span style="color:#4e9a06">&#34;new task&#34;</span> --labels labels.json <span style="color:#204a87">local</span> file1.jpg file2.jpg
+</code></pre></div></li>
+<li>Create a task named &ldquo;task 1&rdquo; on the server &ldquo;example.com&rdquo; labels from the file &ldquo;labels.json&rdquo;
+and local image &ldquo;image1.jpg&rdquo;, the task will be created as user &ldquo;user-1&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli --server-host example.com --auth user-1 create <span style="color:#4e9a06">&#34;task 1&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--labels labels.json <span style="color:#204a87">local</span> image1.jpg
+</code></pre></div></li>
+<li>Create a task named &ldquo;task 1&rdquo;, labels from the project with id 1 and with a remote video file,
+the task will be created as user &ldquo;user-1&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli --auth user-1:password create <span style="color:#4e9a06">&#34;task 1&#34;</span> --project_id <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>remote https://github.com/opencv/opencv/blob/master/samples/data/vtest.avi?raw<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
+</code></pre></div></li>
+<li>Create a task named &ldquo;task 1 sort random&rdquo;, with labels &ldquo;cat&rdquo; and &ldquo;dog&rdquo;, with chunk size 8,
+with sorting-method random, frame step 10, copy the data on the CVAT server,
+with use zip chunks and the video file will be taken from the shared resource:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli create <span style="color:#4e9a06">&#34;task 1 sort random&#34;</span> --labels <span style="color:#4e9a06">&#39;[{&#34;name&#34;: &#34;cat&#34;},{&#34;name&#34;: &#34;dog&#34;}]&#39;</span> --chunk_size <span style="color:#0000cf;font-weight:bold">8</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--sorting-method random --frame_step <span style="color:#0000cf;font-weight:bold">10</span> --copy_data --use_zip_chunks share //share/dataset_1/video.avi
+</code></pre></div></li>
+<li>Create a task named &ldquo;task from dataset_1&rdquo;, labels from the file &ldquo;labels.json&rdquo;, with link to bug tracker,
+image quality will be reduced to 75, annotation in the format &ldquo;CVAT 1.1&rdquo; will be taken
+from the file &ldquo;annotation.xml&rdquo;, the data will be loaded from &ldquo;dataset_1/images/&rdquo;,
+the task will be created as user &ldquo;user-2&rdquo;, and the password will need to be entered additionally:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli --auth user-2 create <span style="color:#4e9a06">&#34;task from dataset_1&#34;</span> --labels labels.json <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--bug_tracker https://bug-tracker.com/0001 --image_quality <span style="color:#0000cf;font-weight:bold">75</span> --annotation_path annotation.xml <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--annotation_format <span style="color:#4e9a06">&#34;CVAT 1.1&#34;</span> <span style="color:#204a87">local</span> dataset_1/images/
+</code></pre></div></li>
+<li>Create a task named &ldquo;segmented task 1&rdquo;, labels from the file &ldquo;labels.json&rdquo;, with overlay size 5,
+segment size 100, with frames 5 through 705, using cache and with a remote video file:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli create <span style="color:#4e9a06">&#34;segmented task 1&#34;</span> --labels labels.json --overlap <span style="color:#0000cf;font-weight:bold">5</span> --segment_size <span style="color:#0000cf;font-weight:bold">100</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--start_frame <span style="color:#0000cf;font-weight:bold">5</span> --stop_frame <span style="color:#0000cf;font-weight:bold">705</span> --use_cache <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>remote https://github.com/opencv/opencv/blob/master/samples/data/vtest.avi?raw<span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span>
+</code></pre></div></li>
+<li>Create a task named &ldquo;task 1 with sync annotation&rdquo;, with label &ldquo;person&rdquo;,
+with annotation storage in <code>git</code> repository, enable <code>lfs</code> and the image files from the shared resource:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli create <span style="color:#4e9a06">&#34;task 1 with sync annotation&#34;</span> --labels <span style="color:#4e9a06">&#39;[{&#34;name&#34;: &#34;person&#34;}]&#39;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--dataset_repository_url https://github.com/user/dataset/blob/main/annotation/anno_file_name.zip <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>--lfs share //share/large_dataset/images/
+</code></pre></div></li>
+</ul>
+<h3 id="delete">Delete</h3>
+<ul>
+<li>Delete tasks with id &ldquo;100&rdquo;, &ldquo;101&rdquo;, &ldquo;102&rdquo; , the command will be executed from &ldquo;user-1&rdquo; having delete permissions:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli --auth user-1:password delete <span style="color:#0000cf;font-weight:bold">100</span> <span style="color:#0000cf;font-weight:bold">101</span> <span style="color:#0000cf;font-weight:bold">102</span>
+</code></pre></div></li>
+</ul>
+<h3 id="list">List</h3>
+<ul>
+<li>List all tasks:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli ls
+</code></pre></div></li>
+<li>Save list of all tasks into file &ldquo;list_of_tasks.json&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli ls --json &gt; list_of_tasks.json
+</code></pre></div></li>
+</ul>
+<h3 id="frames">Frames</h3>
+<ul>
+<li>Save frame 12, 15, 22 from task with id 119, into &ldquo;images&rdquo; folder with compressed quality:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli frames --outdir images --quality compressed <span style="color:#0000cf;font-weight:bold">119</span> <span style="color:#0000cf;font-weight:bold">12</span> <span style="color:#0000cf;font-weight:bold">15</span> <span style="color:#0000cf;font-weight:bold">22</span>
+</code></pre></div></li>
+</ul>
+<h3 id="dump-annotation">Dump annotation</h3>
+<ul>
+<li>Dump annotation task with id 103, in the format <code>CVAT for images 1.1</code> and save to the file &ldquo;output.zip&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli dump --format <span style="color:#4e9a06">&#34;CVAT for images 1.1&#34;</span> <span style="color:#0000cf;font-weight:bold">103</span> output.zip
+</code></pre></div></li>
+<li>Dump annotation task with id 104, in the format <code>COCO 1.0</code> and save to the file &ldquo;output.zip&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli dump --format <span style="color:#4e9a06">&#34;COCO 1.0&#34;</span> <span style="color:#0000cf;font-weight:bold">104</span> output.zip
+</code></pre></div></li>
+</ul>
+<h3 id="upload-annotation">Upload annotation</h3>
+<ul>
+<li>Upload annotation into task with id 105, in the format <code>CVAT 1.1</code> from the file &ldquo;annotation.xml&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli upload --format <span style="color:#4e9a06">&#34;CVAT 1.1&#34;</span> <span style="color:#0000cf;font-weight:bold">105</span> annotation.xml
+</code></pre></div></li>
+</ul>
+<h3 id="export-task">Export task</h3>
+<ul>
+<li>Export task with id 136 to file &ldquo;task_136.zip&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli <span style="color:#204a87">export</span> <span style="color:#0000cf;font-weight:bold">136</span> task_136.zip
+</code></pre></div></li>
+</ul>
+<h3 id="import">Import</h3>
+<ul>
+<li>Import task from file &ldquo;task_backup.zip&rdquo;:
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cvat-cli import task_backup.zip
+</code></pre></div></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8f4289d6a6e8c1027da2ccb009e87528">4 - Frequently asked questions</h1>
+    
+	<h3 id="my-server-uses-a-custom-ssl-certificate-and-i-dont-want-to-check-it">My server uses a custom SSL certificate and I don&rsquo;t want to check it.</h3>
+<p>You can call control SSL certificate check with the <code>--insecure</code> CLI argument.
+For SDK, you can specify <code>ssl_verify = True/False</code> in the <code>cvat_sdk.core.client.Config</code> object.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-2 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Gitter public chat" aria-label="Gitter public chat">
+    <a class="text-white" rel="noopener noreferrer" href="https://gitter.im/opencv-cvat/public">
+      <i class="fab fa-gitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Stack Overflow" aria-label="Stack Overflow">
+    <a class="text-white" rel="noopener noreferrer" href="https://stackoverflow.com/search?q=%23cvat">
+      <i class="fab fa-stack-overflow"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="YouTube" aria-label="YouTube">
+    <a class="text-white" rel="noopener noreferrer" href="https://www.youtube.com/user/nmanovic">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-2 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" rel="noopener noreferrer" href="https://github.com/cvat-ai/cvat">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Forum on Intel Developer Zone" aria-label="Forum on Intel Developer Zone">
+    <a class="text-white" rel="noopener noreferrer" href="https://community.intel.com/t5/Intel-Distribution-of-OpenVINO/bd-p/distribution-openvino-toolkit">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Gitter developers chat" aria-label="Gitter developers chat">
+    <a class="text-white" rel="noopener noreferrer" href="https://gitter.im/opencv-cvat/dev">
+      <i class="fab fa-gitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-8 text-center order-sm-2">
+        <small class="mr-1"><a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy Policy</a></small>
+        |
+        <small class="mx-1"><a href="https://www.intel.com/content/www/us/en/legal/terms-of-use.html">Terms of Use</a></small>
+        |
+        <small class="ml-1"><a href="https://cvat.org/api/restrictions/terms-of-use">CVAT terms of Use</a></small>
+        <br/>
+        <div class="footer-disclaimer text-white ">
+          <small>Intel technologies may require enabled hardware, software or service activation. // No product or component can be absolutely secure. // Your costs and results may vary. // Performance varies by use, configuration and other factors. // See our complete legal <u><a href="https://edc.intel.com/content/www/us/en/products/performance/benchmarks/overview/?r=219444055">Notices and Disclaimers</a></u>. // Intel is committed to respecting human rights and avoiding complicity in human rights abuses. See Intel’s <a href="https://www.intel.com/content/www/us/en/policy/policy-human-rights.html"><u>Global Human Rights Principles</u></a>. Intel’s products and software are intended only to be used in applications that do not cause or contribute to a violation of an internationally recognized human right.</small>
+      </div>
+  
+    <p class="mt-2"><a href="../../../about/">About</a></p>
+  
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.3b172c13b62c2bea8b1c9d2599cddc8cf89718a92d792c680871c81ba43d8c85.js" integrity="sha256-OxcsE7YsK&#43;qLHJ0lmc3cjPiXGKkteSxoCHHIG6Q9jIU=" crossorigin="anonymous"></script>
+
+
+
+<script src='../../../js/prism.js'></script>
+
+
+
+  </body>
+</html>

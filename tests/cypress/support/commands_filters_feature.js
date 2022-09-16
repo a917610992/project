@@ -43,14 +43,14 @@ Cypress.Commands.add('clearFilters', () => {
 Cypress.Commands.add('addFiltersGroup', (groupIndex) => {
     cy.сheckFiltersModalOpened();
     cy.collectGroupID().then((groupIdIndex) => {
-        cy.get(`[data-id="${groupIdIndex[groupIndex]}"]`).contains('button', 'Add group').first().click();
+        cy.get(`[data-id="${groupIdIndex[groupIndex]}"]`).contains('button', '添加组').first().click();
     });
 });
 
 Cypress.Commands.add('addFiltersRule', (groupIndex) => {
     cy.сheckFiltersModalOpened();
     cy.collectGroupID().then((groupIdIndex) => {
-        cy.get(`[data-id="${groupIdIndex[groupIndex]}"]`).contains('button', 'Add rule').click();
+        cy.get(`[data-id="${groupIdIndex[groupIndex]}"]`).contains('button', '添加规则').click();
     });
 });
 
